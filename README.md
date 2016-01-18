@@ -1,6 +1,8 @@
 # LSNavigationBarTransition
 导航栏背景色可以统一设置，每一个控制器导航栏背景色还可以自己设置不应影响统一设置的界面，边缘手势去除过渡动画
 
+#将两个分类拖到项目里即可使用，轻松实现常用导航栏效果
+
 #在UIViewController+LSNavigationBarTransition类里
 
 -(void)ls_viewDidLoad

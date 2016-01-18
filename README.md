@@ -13,4 +13,5 @@
     }
 
 若有的界面需要单独设置，只需要在对应控制器viewDidLoad里设置即可，不会影响统一设置的界面
-[foo]: https://github.com/lsmakethebest/LSNavigationBarTransition/blob/master/images/yanshi.gif/  "Optional Title Here"
+
+![image](https://github.com/lsmakethebest/LSNavigationBarTransition/blob/master/images/yanshi.gif)

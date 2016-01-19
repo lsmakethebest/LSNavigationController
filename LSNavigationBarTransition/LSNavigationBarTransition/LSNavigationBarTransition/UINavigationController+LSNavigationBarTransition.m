@@ -120,13 +120,16 @@
 - (void)ls_pushViewController:(UIViewController*)viewController animated:(BOOL)animated
 {
     NSOperationQueue* queue = [[NSOperationQueue alloc] init];
+    __block UIImage *image;
     NSBlockOperation* operation = [NSBlockOperation blockOperationWithBlock:^{
-        [[LSStack sharedInstance] push:[self captureView]];
-
+        image=[self captureView];
     }];
     operation.completionBlock = ^() {
         [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-            [self ls_pushViewController:viewController animated:animated];
+            if (image) {
+                [[LSStack sharedInstance] push:image];
+                [self ls_pushViewController:viewController animated:animated];
+            }
         }];
     };
     [queue addOperation:operation];

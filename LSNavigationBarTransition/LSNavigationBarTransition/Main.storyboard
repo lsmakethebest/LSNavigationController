@@ -8,7 +8,7 @@
         <!--Navigation Controller-->
         <scene sceneID="3pZ-Ki-IFt">
             <objects>
-                <navigationController id="Jxy-Td-Nby" sceneMemberID="viewController">
+                <navigationController id="Jxy-Td-Nby" customClass="LSNavigationController" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="9VU-MA-yRd">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -21,7 +21,7 @@
             </objects>
             <point key="canvasLocation" x="-690" y="219"/>
         </scene>
-        <!--第一页-->
+        <!--第一一一一一一一一一一一一页-->
         <scene sceneID="Yow-Ys-yxJ">
             <objects>
                 <viewController id="ONQ-9f-2K2" customClass="OneViewController" sceneMemberID="viewController">
@@ -33,18 +33,36 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VXj-zg-dIV">
-                                <rect key="frame" x="176" y="311" width="109" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VXj-zg-dIV">
+                                <rect key="frame" x="250" y="311" width="100" height="30"/>
                                 <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="Sit-ar-M4P"/>
+                                </constraints>
                                 <state key="normal" title="跳转"/>
                                 <connections>
                                     <segue destination="XVz-D4-rzM" kind="push" id="38Q-ws-Zjl"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="时间" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Hv-xn-xwb">
+                                <rect key="frame" x="283" y="473.5" width="34" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.83879159489564592" green="0.74693928528246545" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="8Hv-xn-xwb" firstAttribute="top" secondItem="VXj-zg-dIV" secondAttribute="bottom" constant="132" id="Aim-SZ-3Zn"/>
+                            <constraint firstItem="VXj-zg-dIV" firstAttribute="centerX" secondItem="jFx-Ra-KPl" secondAttribute="centerX" id="C9Y-0G-d3n"/>
+                            <constraint firstItem="8Hv-xn-xwb" firstAttribute="centerX" secondItem="jFx-Ra-KPl" secondAttribute="centerX" id="UwK-xD-8at"/>
+                            <constraint firstItem="Ntu-o4-ftB" firstAttribute="top" secondItem="8Hv-xn-xwb" secondAttribute="bottom" constant="106" id="cHr-xI-4L1"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="第一页" id="f2w-FU-CxQ"/>
+                    <navigationItem key="navigationItem" title="第一一一一一一一一一一一一页" id="f2w-FU-CxQ"/>
+                    <connections>
+                        <outlet property="myLabel" destination="8Hv-xn-xwb" id="hbB-bs-wgb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ile-8n-3ea" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -62,16 +80,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="09w-FB-BAq">
-                                <rect key="frame" x="192" y="305" width="100" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="09w-FB-BAq">
+                                <rect key="frame" x="265" y="338" width="70" height="30"/>
                                 <color key="backgroundColor" red="0.86657720616868117" green="0.99476894479810773" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="70" id="khX-QP-k1b"/>
+                                </constraints>
                                 <state key="normal" title="跳转"/>
                                 <connections>
                                     <segue destination="8bH-Mp-WTy" kind="show" id="kFI-9n-ytG"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="0.66683481094823072" blue="0.97711623312606" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="oGu-Bg-o1B" firstAttribute="top" secondItem="09w-FB-BAq" secondAttribute="bottom" constant="232" id="bZT-E9-bpC"/>
+                            <constraint firstItem="09w-FB-BAq" firstAttribute="centerX" secondItem="dEI-sd-PAt" secondAttribute="centerX" id="taw-5Z-fRb"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="第二页" id="2y1-BS-1wj"/>
                 </viewController>
@@ -91,16 +116,32 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eTR-Vd-TYE">
-                                <rect key="frame" x="157" y="290" width="101" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eTR-Vd-TYE">
+                                <rect key="frame" x="265" y="338" width="70" height="30"/>
                                 <color key="backgroundColor" red="1" green="0.87242239773408103" blue="0.89563866549631133" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="70" id="c4b-5C-mUF"/>
+                                </constraints>
                                 <state key="normal" title="跳转"/>
                                 <connections>
                                     <segue destination="h7I-nS-WL2" kind="show" id="5dx-9P-3LG"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MzY-S5-l6v">
+                                <rect key="frame" x="263" y="398" width="74" height="30"/>
+                                <state key="normal" title="popToRoot"/>
+                                <connections>
+                                    <action selector="popToRoot:" destination="8bH-Mp-WTy" eventType="touchUpInside" id="wAk-Kb-8Yv"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="eTR-Vd-TYE" firstAttribute="centerX" secondItem="7Cd-6C-DQx" secondAttribute="centerX" id="D5T-rV-q2z"/>
+                            <constraint firstItem="MzY-S5-l6v" firstAttribute="top" secondItem="eTR-Vd-TYE" secondAttribute="bottom" constant="30" id="Z7j-wU-SbE"/>
+                            <constraint firstItem="VZs-ge-a4d" firstAttribute="top" secondItem="eTR-Vd-TYE" secondAttribute="bottom" constant="232" id="uvl-lH-wOT"/>
+                            <constraint firstItem="MzY-S5-l6v" firstAttribute="centerX" secondItem="7Cd-6C-DQx" secondAttribute="centerX" id="xdO-V7-Tg0"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="第三页" id="TV3-vP-229"/>
                 </viewController>
@@ -111,7 +152,7 @@
         <!--第四页-->
         <scene sceneID="kmu-KZ-kuF">
             <objects>
-                <viewController id="h7I-nS-WL2" sceneMemberID="viewController">
+                <viewController id="h7I-nS-WL2" customClass="FourViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="xpW-Jq-QhQ"/>
                         <viewControllerLayoutGuide type="bottom" id="sob-rv-Qdy"/>
@@ -119,7 +160,20 @@
                     <view key="view" contentMode="scaleToFill" id="B1N-Ia-50L">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YwB-nX-qYG">
+                                <rect key="frame" x="215.5" y="285" width="169" height="30"/>
+                                <state key="normal" title="popToTwoViewController"/>
+                                <connections>
+                                    <action selector="popToTwoViewController:" destination="h7I-nS-WL2" eventType="touchUpInside" id="xYZ-rs-8Gp"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="YwB-nX-qYG" firstAttribute="centerX" secondItem="B1N-Ia-50L" secondAttribute="centerX" id="YW2-YU-8dG"/>
+                            <constraint firstItem="YwB-nX-qYG" firstAttribute="centerY" secondItem="B1N-Ia-50L" secondAttribute="centerY" id="hMi-Ai-9K5"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="第四页" id="htQ-DO-xeM"/>
                 </viewController>

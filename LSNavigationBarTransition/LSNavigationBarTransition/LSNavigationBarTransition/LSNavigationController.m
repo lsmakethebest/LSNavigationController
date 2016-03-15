@@ -79,6 +79,7 @@
     case UIGestureRecognizerStateFailed: {
         CGFloat velocityX = [recognizer velocityInView:recognizer.view].x;
         if (velocityX > 800) {
+            [self.interactionAnimation updateWithPercent:0.5];
             [self.interactionAnimation finishBy:YES];
             self.interactionAnimation = nil;
             return;

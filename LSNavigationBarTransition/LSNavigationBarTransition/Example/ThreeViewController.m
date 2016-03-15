@@ -11,9 +11,17 @@
 #import "ThreeViewController.h"
 #import "UIColor+Extension.h"
 @implementation ThreeViewController
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
-    [self.navigationController.navigationBar setBackgroundImage:[[UIColor yellowColor] imageWithColor] forBarMetrics:UIBarMetricsDefault];
+    [self.navigationController.navigationBar setBackgroundImage:[[UIColor colorWithRed:0.402 green:0.559 blue:1.000 alpha:1.000] imageWithColor] forBarMetrics:UIBarMetricsDefault];
+}
+
+- (IBAction)popToRoot:(id)sender {
+    [self.navigationController popToRootViewControllerAnimated:YES];
+}
+
+-(void)dealloc
+{
+    
 }
 @end

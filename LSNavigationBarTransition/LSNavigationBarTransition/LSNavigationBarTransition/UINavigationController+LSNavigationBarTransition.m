@@ -49,8 +49,7 @@
     dispatch_once(&onceToken, ^{
         UIGestureRecognizer* gesture = self.interactivePopGestureRecognizer;
         gesture.enabled = NO;
-        UIScreenEdgePanGestureRecognizer* pan = [[UIScreenEdgePanGestureRecognizer alloc] initWithTarget:self action:@selector(handleGesture:)];
-        pan.edges = UIRectEdgeLeft;
+        UIPanGestureRecognizer* pan = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handleGesture:)];
         [self.view addGestureRecognizer:pan];
         pan.delegate = self;
 

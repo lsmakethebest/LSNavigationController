@@ -11,12 +11,10 @@
 		491DF2BF1C4A99A10094B636 /* ThreeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 491DF2B91C4A99A10094B636 /* ThreeViewController.m */; };
 		491DF2C01C4A99A10094B636 /* TwoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 491DF2BB1C4A99A10094B636 /* TwoViewController.m */; };
 		491DF2C11C4A99A10094B636 /* UIColor+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 491DF2BD1C4A99A10094B636 /* UIColor+Extension.m */; };
-		491DF2CD1C4A99C30094B636 /* LSImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 491DF2C41C4A99C30094B636 /* LSImageView.m */; };
-		491DF2CE1C4A99C30094B636 /* LSStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 491DF2C61C4A99C30094B636 /* LSStack.m */; };
-		491DF2CF1C4A99C30094B636 /* LSSwizzle.m in Sources */ = {isa = PBXBuildFile; fileRef = 491DF2C81C4A99C30094B636 /* LSSwizzle.m */; };
-		491DF2D01C4A99C30094B636 /* UINavigationController+LSNavigationBarTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 491DF2CA1C4A99C30094B636 /* UINavigationController+LSNavigationBarTransition.m */; };
 		491DF2D11C4A99C30094B636 /* UIViewController+LSNavigationBarTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 491DF2CC1C4A99C30094B636 /* UIViewController+LSNavigationBarTransition.m */; };
 		491DF2D31C4A99D60094B636 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 491DF2D21C4A99D60094B636 /* Main.storyboard */; };
+		496AF7961C97F9F9002A2773 /* LSInteractionTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 496AF7931C97F9F9002A2773 /* LSInteractionTransition.m */; };
+		496AF7971C97F9F9002A2773 /* LSNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 496AF7951C97F9F9002A2773 /* LSNavigationController.m */; };
 		498012E71C4A0493005AAB4E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 498012E61C4A0493005AAB4E /* main.m */; };
 		498012EA1C4A0493005AAB4E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 498012E91C4A0493005AAB4E /* AppDelegate.m */; };
 		498012F21C4A0493005AAB4E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 498012F11C4A0493005AAB4E /* Assets.xcassets */; };
@@ -51,17 +49,13 @@
 		491DF2BB1C4A99A10094B636 /* TwoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwoViewController.m; sourceTree = "<group>"; };
 		491DF2BC1C4A99A10094B636 /* UIColor+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Extension.h"; sourceTree = "<group>"; };
 		491DF2BD1C4A99A10094B636 /* UIColor+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Extension.m"; sourceTree = "<group>"; };
-		491DF2C31C4A99C30094B636 /* LSImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSImageView.h; sourceTree = "<group>"; };
-		491DF2C41C4A99C30094B636 /* LSImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSImageView.m; sourceTree = "<group>"; };
-		491DF2C51C4A99C30094B636 /* LSStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSStack.h; sourceTree = "<group>"; };
-		491DF2C61C4A99C30094B636 /* LSStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSStack.m; sourceTree = "<group>"; };
-		491DF2C71C4A99C30094B636 /* LSSwizzle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSSwizzle.h; sourceTree = "<group>"; };
-		491DF2C81C4A99C30094B636 /* LSSwizzle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSSwizzle.m; sourceTree = "<group>"; };
-		491DF2C91C4A99C30094B636 /* UINavigationController+LSNavigationBarTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+LSNavigationBarTransition.h"; sourceTree = "<group>"; };
-		491DF2CA1C4A99C30094B636 /* UINavigationController+LSNavigationBarTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+LSNavigationBarTransition.m"; sourceTree = "<group>"; };
 		491DF2CB1C4A99C30094B636 /* UIViewController+LSNavigationBarTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+LSNavigationBarTransition.h"; sourceTree = "<group>"; };
 		491DF2CC1C4A99C30094B636 /* UIViewController+LSNavigationBarTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+LSNavigationBarTransition.m"; sourceTree = "<group>"; };
 		491DF2D21C4A99D60094B636 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		496AF7921C97F9F9002A2773 /* LSInteractionTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSInteractionTransition.h; sourceTree = "<group>"; };
+		496AF7931C97F9F9002A2773 /* LSInteractionTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSInteractionTransition.m; sourceTree = "<group>"; };
+		496AF7941C97F9F9002A2773 /* LSNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSNavigationController.h; sourceTree = "<group>"; };
+		496AF7951C97F9F9002A2773 /* LSNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSNavigationController.m; sourceTree = "<group>"; };
 		498012E21C4A0493005AAB4E /* LSNavigationBarTransition.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LSNavigationBarTransition.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		498012E61C4A0493005AAB4E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		498012E81C4A0493005AAB4E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -120,14 +114,10 @@
 		491DF2C21C4A99C30094B636 /* LSNavigationBarTransition */ = {
 			isa = PBXGroup;
 			children = (
-				491DF2C31C4A99C30094B636 /* LSImageView.h */,
-				491DF2C41C4A99C30094B636 /* LSImageView.m */,
-				491DF2C51C4A99C30094B636 /* LSStack.h */,
-				491DF2C61C4A99C30094B636 /* LSStack.m */,
-				491DF2C71C4A99C30094B636 /* LSSwizzle.h */,
-				491DF2C81C4A99C30094B636 /* LSSwizzle.m */,
-				491DF2C91C4A99C30094B636 /* UINavigationController+LSNavigationBarTransition.h */,
-				491DF2CA1C4A99C30094B636 /* UINavigationController+LSNavigationBarTransition.m */,
+				496AF7921C97F9F9002A2773 /* LSInteractionTransition.h */,
+				496AF7931C97F9F9002A2773 /* LSInteractionTransition.m */,
+				496AF7941C97F9F9002A2773 /* LSNavigationController.h */,
+				496AF7951C97F9F9002A2773 /* LSNavigationController.m */,
 				491DF2CB1C4A99C30094B636 /* UIViewController+LSNavigationBarTransition.h */,
 				491DF2CC1C4A99C30094B636 /* UIViewController+LSNavigationBarTransition.m */,
 			);
@@ -330,15 +320,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				491DF2BE1C4A99A10094B636 /* OneViewController.m in Sources */,
-				491DF2CE1C4A99C30094B636 /* LSStack.m in Sources */,
 				491DF2C11C4A99A10094B636 /* UIColor+Extension.m in Sources */,
 				498012EA1C4A0493005AAB4E /* AppDelegate.m in Sources */,
+				496AF7971C97F9F9002A2773 /* LSNavigationController.m in Sources */,
 				498012E71C4A0493005AAB4E /* main.m in Sources */,
-				491DF2CD1C4A99C30094B636 /* LSImageView.m in Sources */,
 				491DF2C01C4A99A10094B636 /* TwoViewController.m in Sources */,
-				491DF2D01C4A99C30094B636 /* UINavigationController+LSNavigationBarTransition.m in Sources */,
 				491DF2BF1C4A99A10094B636 /* ThreeViewController.m in Sources */,
-				491DF2CF1C4A99C30094B636 /* LSSwizzle.m in Sources */,
+				496AF7961C97F9F9002A2773 /* LSInteractionTransition.m in Sources */,
 				491DF2D11C4A99C30094B636 /* UIViewController+LSNavigationBarTransition.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

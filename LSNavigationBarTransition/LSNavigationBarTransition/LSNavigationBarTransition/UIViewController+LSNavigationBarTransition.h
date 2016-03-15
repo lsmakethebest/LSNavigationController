@@ -12,5 +12,4 @@
 
 @property (nonatomic, strong) UINavigationBar *ls_navigationBar;
 @property (nonatomic, assign) BOOL ls_prefersNavigationBarBackgroundViewHidden;
--(void)ls_addNavigationBarIfNeed;
 @end

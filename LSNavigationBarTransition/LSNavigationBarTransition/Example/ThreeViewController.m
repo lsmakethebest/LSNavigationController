@@ -13,7 +13,7 @@
 @implementation ThreeViewController
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self.navigationController.navigationBar setBackgroundImage:[[UIColor colorWithRed:0.402 green:0.559 blue:1.000 alpha:1.000] imageWithColor] forBarMetrics:UIBarMetricsDefault];
+    [self.navigationController.navigationBar setBackgroundImage:[UIColor imageWithColor] forBarMetrics:UIBarMetricsDefault];
 }
 
 - (IBAction)popToRoot:(id)sender {

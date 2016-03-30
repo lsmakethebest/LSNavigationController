@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		491DF2D11C4A99C30094B636 /* UIViewController+LSNavigationBarTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 491DF2CC1C4A99C30094B636 /* UIViewController+LSNavigationBarTransition.m */; };
-		496AF7961C97F9F9002A2773 /* LSInteractionTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 496AF7931C97F9F9002A2773 /* LSInteractionTransition.m */; };
 		496AF7971C97F9F9002A2773 /* LSNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 496AF7951C97F9F9002A2773 /* LSNavigationController.m */; };
 		496AF7A21C97FA81002A2773 /* FourViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 496AF7991C97FA81002A2773 /* FourViewController.m */; };
 		496AF7A31C97FA81002A2773 /* OneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 496AF79B1C97FA81002A2773 /* OneViewController.m */; };
@@ -22,6 +20,10 @@
 		498012F51C4A0493005AAB4E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 498012F31C4A0493005AAB4E /* LaunchScreen.storyboard */; };
 		498013001C4A0493005AAB4E /* LSNavigationBarTransitionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 498012FF1C4A0493005AAB4E /* LSNavigationBarTransitionTests.m */; };
 		4980130B1C4A0493005AAB4E /* LSNavigationBarTransitionUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4980130A1C4A0493005AAB4E /* LSNavigationBarTransitionUITests.m */; };
+		4991EB871CA17EFA006AFFFD /* LSContentNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4991EB861CA17EFA006AFFFD /* LSContentNavigationController.m */; };
+		4991EB8A1CA17F25006AFFFD /* LSContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4991EB891CA17F25006AFFFD /* LSContentViewController.m */; };
+		4991EB9B1CA1A668006AFFFD /* backImage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4991EB991CA1A668006AFFFD /* backImage@2x.png */; };
+		4991EB9C1CA1A668006AFFFD /* backImage@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4991EB9A1CA1A668006AFFFD /* backImage@3x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,10 +44,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		491DF2CB1C4A99C30094B636 /* UIViewController+LSNavigationBarTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+LSNavigationBarTransition.h"; sourceTree = "<group>"; };
-		491DF2CC1C4A99C30094B636 /* UIViewController+LSNavigationBarTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+LSNavigationBarTransition.m"; sourceTree = "<group>"; };
-		496AF7921C97F9F9002A2773 /* LSInteractionTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSInteractionTransition.h; sourceTree = "<group>"; };
-		496AF7931C97F9F9002A2773 /* LSInteractionTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSInteractionTransition.m; sourceTree = "<group>"; };
 		496AF7941C97F9F9002A2773 /* LSNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSNavigationController.h; sourceTree = "<group>"; };
 		496AF7951C97F9F9002A2773 /* LSNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSNavigationController.m; sourceTree = "<group>"; };
 		496AF7981C97FA81002A2773 /* FourViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FourViewController.h; sourceTree = "<group>"; };
@@ -72,6 +70,12 @@
 		498013061C4A0493005AAB4E /* LSNavigationBarTransitionUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LSNavigationBarTransitionUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4980130A1C4A0493005AAB4E /* LSNavigationBarTransitionUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LSNavigationBarTransitionUITests.m; sourceTree = "<group>"; };
 		4980130C1C4A0493005AAB4E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4991EB851CA17EFA006AFFFD /* LSContentNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSContentNavigationController.h; sourceTree = "<group>"; };
+		4991EB861CA17EFA006AFFFD /* LSContentNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSContentNavigationController.m; sourceTree = "<group>"; };
+		4991EB881CA17F25006AFFFD /* LSContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSContentViewController.h; sourceTree = "<group>"; };
+		4991EB891CA17F25006AFFFD /* LSContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSContentViewController.m; sourceTree = "<group>"; };
+		4991EB991CA1A668006AFFFD /* backImage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "backImage@2x.png"; sourceTree = "<group>"; };
+		4991EB9A1CA1A668006AFFFD /* backImage@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "backImage@3x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,14 +106,14 @@
 		491DF2B51C4A99A10094B636 /* Example */ = {
 			isa = PBXGroup;
 			children = (
-				496AF7981C97FA81002A2773 /* FourViewController.h */,
-				496AF7991C97FA81002A2773 /* FourViewController.m */,
 				496AF79A1C97FA81002A2773 /* OneViewController.h */,
 				496AF79B1C97FA81002A2773 /* OneViewController.m */,
-				496AF79C1C97FA81002A2773 /* ThreeViewController.h */,
-				496AF79D1C97FA81002A2773 /* ThreeViewController.m */,
 				496AF79E1C97FA81002A2773 /* TwoViewController.h */,
 				496AF79F1C97FA81002A2773 /* TwoViewController.m */,
+				496AF79C1C97FA81002A2773 /* ThreeViewController.h */,
+				496AF79D1C97FA81002A2773 /* ThreeViewController.m */,
+				496AF7981C97FA81002A2773 /* FourViewController.h */,
+				496AF7991C97FA81002A2773 /* FourViewController.m */,
 				496AF7A01C97FA81002A2773 /* UIColor+Extension.h */,
 				496AF7A11C97FA81002A2773 /* UIColor+Extension.m */,
 			);
@@ -119,12 +123,14 @@
 		491DF2C21C4A99C30094B636 /* LSNavigationBarTransition */ = {
 			isa = PBXGroup;
 			children = (
-				496AF7921C97F9F9002A2773 /* LSInteractionTransition.h */,
-				496AF7931C97F9F9002A2773 /* LSInteractionTransition.m */,
+				4991EB991CA1A668006AFFFD /* backImage@2x.png */,
+				4991EB9A1CA1A668006AFFFD /* backImage@3x.png */,
 				496AF7941C97F9F9002A2773 /* LSNavigationController.h */,
 				496AF7951C97F9F9002A2773 /* LSNavigationController.m */,
-				491DF2CB1C4A99C30094B636 /* UIViewController+LSNavigationBarTransition.h */,
-				491DF2CC1C4A99C30094B636 /* UIViewController+LSNavigationBarTransition.m */,
+				4991EB851CA17EFA006AFFFD /* LSContentNavigationController.h */,
+				4991EB861CA17EFA006AFFFD /* LSContentNavigationController.m */,
+				4991EB881CA17F25006AFFFD /* LSContentViewController.h */,
+				4991EB891CA17F25006AFFFD /* LSContentViewController.m */,
 			);
 			path = LSNavigationBarTransition;
 			sourceTree = "<group>";
@@ -299,7 +305,9 @@
 			files = (
 				496AF7A81C97FA9F002A2773 /* Main.storyboard in Resources */,
 				498012F51C4A0493005AAB4E /* LaunchScreen.storyboard in Resources */,
+				4991EB9C1CA1A668006AFFFD /* backImage@3x.png in Resources */,
 				498012F21C4A0493005AAB4E /* Assets.xcassets in Resources */,
+				4991EB9B1CA1A668006AFFFD /* backImage@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -324,15 +332,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4991EB871CA17EFA006AFFFD /* LSContentNavigationController.m in Sources */,
 				496AF7A21C97FA81002A2773 /* FourViewController.m in Sources */,
 				498012EA1C4A0493005AAB4E /* AppDelegate.m in Sources */,
 				496AF7971C97F9F9002A2773 /* LSNavigationController.m in Sources */,
 				498012E71C4A0493005AAB4E /* main.m in Sources */,
-				496AF7961C97F9F9002A2773 /* LSInteractionTransition.m in Sources */,
 				496AF7A31C97FA81002A2773 /* OneViewController.m in Sources */,
 				496AF7A51C97FA81002A2773 /* TwoViewController.m in Sources */,
 				496AF7A61C97FA81002A2773 /* UIColor+Extension.m in Sources */,
-				491DF2D11C4A99C30094B636 /* UIViewController+LSNavigationBarTransition.m in Sources */,
+				4991EB8A1CA17F25006AFFFD /* LSContentViewController.m in Sources */,
 				496AF7A41C97FA81002A2773 /* ThreeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

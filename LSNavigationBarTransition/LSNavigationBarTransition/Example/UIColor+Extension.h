@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface UIColor (Extension)
--(UIImage*)imageWithColor;
++(UIImage*)imageWithColor;
 @end

@@ -11,5 +11,14 @@
 #import "TwoViewController.h"
 #import "UIColor+Extension.h"
 @implementation TwoViewController
+-(void)viewDidLoad
+{
+    [super viewDidLoad];
+    [self.navigationController.navigationBar setBackgroundImage:[UIColor imageWithColor] forBarMetrics:UIBarMetricsDefault];
+}
+-(void)dealloc
+{
 
+
+}
 @end

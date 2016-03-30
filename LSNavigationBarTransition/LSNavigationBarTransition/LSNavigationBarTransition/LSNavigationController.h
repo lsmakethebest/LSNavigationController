@@ -10,14 +10,9 @@
 #import "LSInteractionTransition.h"
 
 
-@interface LSNavigationController : UINavigationController<UIGestureRecognizerDelegate, UINavigationControllerDelegate, UIViewControllerInteractiveTransitioning, UIViewControllerTransitioningDelegate, UINavigationBarDelegate>
-
-//交互动画
-@property (nonatomic, strong) LSInteractionTransition *interactionAnimation;
-
-@property (nonatomic, strong) LSStack* stack;
+@interface LSNavigationController : UINavigationController<UIGestureRecognizerDelegate, UINavigationControllerDelegate>
 //是否开启全屏右滑
 @property (nonatomic, assign) BOOL fullScreenGesture;
 
-
 @end
+

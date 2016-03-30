@@ -9,15 +9,22 @@
 #import "UIColor+Extension.h"
 
 @implementation UIColor (Extension)
--(UIImage*)imageWithColor
++(UIImage*)imageWithColor
 {
     UIGraphicsBeginImageContext(CGSizeMake(1, 1));
     CGContextRef context = UIGraphicsGetCurrentContext();
     CGContextAddRect(context, CGRectMake(0, 0, 1, 1));
-    [self set];
+    [[self randomColor] set];
     CGContextFillPath(context);
    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     return image;
+}
++ (UIColor *)randomColor {
+    
+    CGFloat red = ( arc4random() % 256 / 256.0 );
+    CGFloat blue= ( arc4random() % 256 / 256.0 );
+    CGFloat green= ( arc4random() % 256 / 256.0 );
+    return [UIColor colorWithRed:red green:blue blue:green alpha:1.0];
 }
 @end

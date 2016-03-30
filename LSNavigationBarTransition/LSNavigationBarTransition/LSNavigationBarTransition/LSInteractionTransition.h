@@ -10,7 +10,7 @@
 
 #import <UIKit/UIKit.h>
 
-#import "UIViewController+LSNavigationBarTransition.h"
+#import "UIViewController+LSNavigationController.h"
 #define Screen_Width [UIScreen mainScreen].bounds.size.width
 #define Screen_Height [UIScreen mainScreen].bounds.size.height
 

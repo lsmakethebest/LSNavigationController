@@ -15,6 +15,7 @@
 
 #import "FourViewController.h"
 #import "UIColor+Extension.h"
+#import "LSContentNavigationController.h"
 @interface FourViewController ()
 
 @end
@@ -23,11 +24,20 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self.navigationController.navigationBar setBackgroundImage:[[UIColor colorWithRed:0.556 green:1.000 blue:0.274 alpha:1.000] imageWithColor] forBarMetrics:UIBarMetricsDefault];
+    [self.navigationController.navigationBar setBackgroundImage:[UIColor imageWithColor] forBarMetrics:UIBarMetricsDefault];
 }
 
 - (IBAction)popToTwoViewController:(id)sender {
-    [self.navigationController popToViewController:self.navigationController.viewControllers[1] animated:YES];
+    LSContentNavigationController*nav=    self.navigationController;
+    nav.normalPush=YES;
+    [self.navigationController pushViewController:[[UIViewController alloc ]init] animated:YES];
+//    [self.navigationController popToViewController:self.navigationController.viewControllers[2] animated:YES];
+    
+    
+    
 }
-
+-(void)dealloc
+{
+    
+}
 @end

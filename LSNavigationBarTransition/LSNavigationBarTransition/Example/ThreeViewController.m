@@ -10,6 +10,9 @@
 
 #import "ThreeViewController.h"
 #import "UIColor+Extension.h"
+#import "LSNavigationController.h"
+#import "FourViewController.h"
+#import "LSNavigationControllerKit.h"
 @implementation ThreeViewController
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -20,8 +23,10 @@
     [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
--(void)dealloc
-{
+- (IBAction)popToTwo:(id)sender {
     
+    
+    [self.navigationController popToViewController:self.ls_topNavigationController.viewControllers[1] animated:YES];
 }
+
 @end

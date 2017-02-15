@@ -8,7 +8,17 @@
 
 #import <UIKit/UIKit.h>
 
+#import "LSNavigationController.h"
+
 @interface LSContentNavigationController : UINavigationController
--(NSArray<UIViewController *> *)ls_viewControllers;
-@property (nonatomic, assign) BOOL normalPush;
+
 @end
+
+
+@interface LSContentViewController : UIViewController
+
++ (instancetype)contentViewControllerWithViewController:(UIViewController*)viewController;
+
+
+@end
+

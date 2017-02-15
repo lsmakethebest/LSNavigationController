@@ -34,4 +34,6 @@
     self.myLabel.text=[NSString stringWithFormat:@"%d",self.time];
     self.time++;
 }
+
+
 @end

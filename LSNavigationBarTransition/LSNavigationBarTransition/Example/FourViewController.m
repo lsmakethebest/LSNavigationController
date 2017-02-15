@@ -15,8 +15,10 @@
 
 #import "FourViewController.h"
 #import "UIColor+Extension.h"
-#import "LSContentNavigationController.h"
-@interface FourViewController ()
+
+#import "LSNavigationControllerKit.h"
+
+@interface FourViewController ()<UITableViewDelegate,UITableViewDataSource>
 
 @end
 
@@ -25,19 +27,36 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.navigationController.navigationBar setBackgroundImage:[UIColor imageWithColor] forBarMetrics:UIBarMetricsDefault];
+ 
+    
+    self.edgesForExtendedLayout=UIRectEdgeNone;
+    if (!self.navigationController.ls_normalPush) {
+        self.navigationController.navigationBarHidden=YES;
+    }
 }
 
-- (IBAction)popToTwoViewController:(id)sender {
-    LSContentNavigationController*nav=    self.navigationController;
-    nav.normalPush=YES;
-    [self.navigationController pushViewController:[[UIViewController alloc ]init] animated:YES];
-//    [self.navigationController popToViewController:self.navigationController.viewControllers[2] animated:YES];
-    
-    
-    
-}
--(void)dealloc
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
+    return 15;
+}
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:@"cell"];
+    if (cell==nil) {
+        cell=[[UITableViewCell alloc]initWithStyle:(UITableViewCellStyleDefault) reuseIdentifier:@"cell"];
+    }
+    cell.textLabel.text=[NSString stringWithFormat:@"dsfdsflkk----%ld",indexPath.row];
+    return cell;
+}
+
+- (IBAction)popToTwo:(id)sender {
+    [self.navigationController popToViewController:self.navigationController.viewControllers[0] animated:YES];
+}
+- (IBAction)popToOne:(id)sender {
+    [self.navigationController popToViewController:self.ls_topNavigationController.viewControllers[0] animated:YES];
     
 }
+
+
 @end

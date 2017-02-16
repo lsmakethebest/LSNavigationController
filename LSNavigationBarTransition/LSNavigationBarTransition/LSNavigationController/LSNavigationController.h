@@ -36,8 +36,8 @@
      如果要显示VC3 VC3=self.navigationController.viewControllers[1]
      在VC6里调用  [self.navigationController popToViewController:VC3 animated:YES];
      
-     如果要显示VC1 VC3=self.ls_topNavigationController.viewControllers[0]
-     在VC6里调用  [self.navigationController popToViewController:VC3 animated:YES];
+     如果要显示VC1 VC1=self.ls_topNavigationController.viewControllers[0]
+     在VC6里调用  [self.navigationController popToViewController:VC1 animated:YES];
 
 
 */

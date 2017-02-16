@@ -30,7 +30,7 @@
 ######VC6调用会pop到VC5
 ######VC2调用会pop到VC1
 
-###(1)popToViewController
+###(3)popToViewController
 #####如果要显示VC3 
 ######VC3=self.navigationController.viewControllers[1]
 ######在VC6里调用  [self.navigationController popToViewController:VC3 animated:YES];

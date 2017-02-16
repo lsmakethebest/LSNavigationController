@@ -6,32 +6,35 @@
 
 ![image](https://github.com/lsmakethebest/LSNavigationBarTransition/blob/master/images/show.gif)
 
-1.没有设置VC2.ls_normalPush
-Nav->(VC.Nav1.VC1)->(VC.Nav2.VC2)->(VC.Nav3.VC3)->(VC.Nav4.VC4)
+#1.没有设置VC2.ls_normalPush
+######结构如下:Nav->(VC.Nav1.VC1)->(VC.Nav2.VC2)->(VC.Nav3.VC3)->(VC.Nav4.VC4)
 
-popToRootViewControllerAnimated
-在VC4里调用,其实是pop到VC1
+###(1)popToRootViewControllerAnimated
+#####在VC4里调用,其实是pop到VC1
 
-popViewControllerAnimated
-正常调用即可
+###(2) popViewControllerAnimated
+#####正常调用即可
 
-popToViewController
-如果要显示VC2 VC2=self.ls_topNavigationController.viewControllers[1]
-在VC4里调用  [self.navigationController popToViewController:VC2 animated:YES];
+###(3)popToViewController
+#####如果要显示VC2 
+######VC2=self.ls_topNavigationController.viewControllers[1]
+######在VC4里调用  [self.navigationController popToViewController:VC2 animated:YES];
 
-2.设置了 VC2.ls_normalPush=YES
-Nav->(VC.Nav1.VC1)->(VC.Nav2.VC2)->VC3->VC4-VC5->VC6
+#2.设置了 VC2.ls_normalPush=YES
+######结构如下:Nav->(VC.Nav1.VC1)->(VC.Nav2.VC2)->VC3->VC4-VC5->VC6
 
-popToRootViewControllerAnimated
-VC6里调用,其实是pop到VC2
+##(1)popToRootViewControllerAnimated
+######VC6里调用,其实是pop到VC2
 
-popViewControllerAnimated
-VC6调用会pop到VC5
-VC2调用会pop到VC1
+###(2)popViewControllerAnimated
+######VC6调用会pop到VC5
+######VC2调用会pop到VC1
 
-popToViewController
-如果要显示VC3 VC3=self.navigationController.viewControllers[1]
-在VC6里调用  [self.navigationController popToViewController:VC3 animated:YES];
+###(1)popToViewController
+#####如果要显示VC3 
+######VC3=self.navigationController.viewControllers[1]
+######在VC6里调用  [self.navigationController popToViewController:VC3 animated:YES];
 
-如果要显示VC1 VC3=self.ls_topNavigationController.viewControllers[0]
-在VC6里调用  [self.navigationController popToViewController:VC3 animated:YES];
+####如果要显示VC1 
+######VC1=self.ls_topNavigationController.viewControllers[0]
+######在VC6里调用  [self.navigationController popToViewController:VC1 animated:YES];

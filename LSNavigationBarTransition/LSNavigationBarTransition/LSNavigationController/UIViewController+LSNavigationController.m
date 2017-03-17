@@ -23,6 +23,18 @@
    return  [objc_getAssociatedObject(self, _cmd) boolValue];
 }
 
+-(void)setLs_cancelGesture:(BOOL)ls_cancelGesture
+{
+    objc_setAssociatedObject(self, @selector(ls_cancelGesture), @(ls_cancelGesture), OBJC_ASSOCIATION_ASSIGN);
+}
+
+-(BOOL)ls_cancelGesture
+{
+    return  [objc_getAssociatedObject(self, _cmd) boolValue];
+}
+
+
+
 -(void)setLs_topNavigationController:(UINavigationController *)ls_topNavigationController
 {
     objc_setAssociatedObject(self, @selector(ls_topNavigationController), ls_topNavigationController, OBJC_ASSOCIATION_RETAIN);

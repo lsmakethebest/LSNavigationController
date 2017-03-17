@@ -48,6 +48,7 @@
 @property (nonatomic, assign) BOOL fullScreenGesture;
 
 
+
 @end
 
 

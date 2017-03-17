@@ -24,4 +24,6 @@
 
 @property (nonatomic,weak) UINavigationController *ls_topNavigationController;
 
+@property (nonatomic,assign)BOOL ls_cancelGesture;
+
 @end

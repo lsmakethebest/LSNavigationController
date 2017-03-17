@@ -91,11 +91,15 @@
 {
     [super viewDidLoad];
     self.interactivePopGestureRecognizer.delegate=self;
+    self.ls_cancelGesture=YES;
     
 }
 
 -(BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer
 {
+    if (self.ls_cancelGesture==NO) {
+        return NO;
+    }
     return self.viewControllers.count>1;
 }
 

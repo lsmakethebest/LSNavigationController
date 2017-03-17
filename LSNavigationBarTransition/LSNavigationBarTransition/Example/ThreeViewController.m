@@ -17,8 +17,19 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.navigationController.navigationBar setBackgroundImage:[UIColor imageWithColor] forBarMetrics:UIBarMetricsDefault];
+    
 }
 
+-(void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    self.ls_topNavigationController.ls_cancelGesture=NO;
+}
+-(void)viewDidDisappear:(BOOL)animated
+{
+    [super viewDidDisappear:animated];
+    self.ls_topNavigationController.ls_cancelGesture=YES;
+}
 - (IBAction)popToRoot:(id)sender {
     [self.navigationController popToRootViewControllerAnimated:YES];
 }

@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "LSNavigationController.h"
+#import "OneViewController.h"
 @interface AppDelegate ()
 
 @end
@@ -16,6 +17,19 @@
 
 - (BOOL)application:(UIApplication*)application didFinishLaunchingWithOptions:(NSDictionary*)launchOptions
 {
+
+    self.window=[[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
+    
+    UITabBarController *tab=[[UITabBarController alloc]init];
+    
+    LSNavigationController *nav=[[LSNavigationController alloc]initWithRootViewController:[[OneViewController alloc]init]];
+nav.title=@"11";
+    LSNavigationController *nav2=[[LSNavigationController alloc]initWithRootViewController:[[OneViewController alloc]init]];
+    nav2.title=@"222";
+    tab.viewControllers=@[nav,nav2];
+    self.window.rootViewController=tab;
+    [self.window makeKeyAndVisible];
+    
     return YES;
 }
 

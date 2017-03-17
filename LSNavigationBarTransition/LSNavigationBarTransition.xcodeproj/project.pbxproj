@@ -25,6 +25,7 @@
 		498012F51C4A0493005AAB4E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 498012F31C4A0493005AAB4E /* LaunchScreen.storyboard */; };
 		498013001C4A0493005AAB4E /* LSNavigationBarTransitionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 498012FF1C4A0493005AAB4E /* LSNavigationBarTransitionTests.m */; };
 		4980130B1C4A0493005AAB4E /* LSNavigationBarTransitionUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4980130A1C4A0493005AAB4E /* LSNavigationBarTransitionUITests.m */; };
+		CD588F901E7BCA43005C9AFD /* OneTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD588F8F1E7BCA43005C9AFD /* OneTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +82,8 @@
 		498013061C4A0493005AAB4E /* LSNavigationBarTransitionUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LSNavigationBarTransitionUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4980130A1C4A0493005AAB4E /* LSNavigationBarTransitionUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LSNavigationBarTransitionUITests.m; sourceTree = "<group>"; };
 		4980130C1C4A0493005AAB4E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CD588F8E1E7BCA43005C9AFD /* OneTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OneTableViewController.h; sourceTree = "<group>"; };
+		CD588F8F1E7BCA43005C9AFD /* OneTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OneTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +143,8 @@
 				496AF7991C97FA81002A2773 /* FourViewController.m */,
 				496AF7A01C97FA81002A2773 /* UIColor+Extension.h */,
 				496AF7A11C97FA81002A2773 /* UIColor+Extension.m */,
+				CD588F8E1E7BCA43005C9AFD /* OneTableViewController.h */,
+				CD588F8F1E7BCA43005C9AFD /* OneTableViewController.m */,
 			);
 			path = Example;
 			sourceTree = "<group>";
@@ -273,7 +278,7 @@
 				TargetAttributes = {
 					498012E11C4A0493005AAB4E = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = U7SJ4KA3L8;
+						DevelopmentTeam = TMHG22C2C5;
 					};
 					498012FA1C4A0493005AAB4E = {
 						CreatedOnToolsVersion = 7.2;
@@ -347,6 +352,7 @@
 				498012E71C4A0493005AAB4E /* main.m in Sources */,
 				496AF7A31C97FA81002A2773 /* OneViewController.m in Sources */,
 				496AF7A51C97FA81002A2773 /* TwoViewController.m in Sources */,
+				CD588F901E7BCA43005C9AFD /* OneTableViewController.m in Sources */,
 				496AF7A61C97FA81002A2773 /* UIColor+Extension.m in Sources */,
 				496AF7A41C97FA81002A2773 /* ThreeViewController.m in Sources */,
 				28B36DCF1E51BDDF00FA654C /* UIViewController+LSNavigationController.m in Sources */,
@@ -484,7 +490,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = U7SJ4KA3L8;
+				DEVELOPMENT_TEAM = TMHG22C2C5;
 				INFOPLIST_FILE = LSNavigationBarTransition/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ls.LSNavigationBarTransition;
@@ -496,7 +502,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = U7SJ4KA3L8;
+				DEVELOPMENT_TEAM = TMHG22C2C5;
 				INFOPLIST_FILE = LSNavigationBarTransition/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ls.LSNavigationBarTransition;

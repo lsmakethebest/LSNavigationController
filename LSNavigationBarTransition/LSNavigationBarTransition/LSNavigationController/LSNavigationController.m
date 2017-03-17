@@ -21,7 +21,7 @@
 {
     [super viewDidLoad];
     self.navigationBar.hidden = YES;
-    
+    self.ls_cancelGesture=YES;
     [[UINavigationBar appearance ] setTintColor:[UIColor whiteColor]];
    
     [[UINavigationBar appearance ] setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];
@@ -56,6 +56,10 @@
 
 -(BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer
 {
+    
+    if (self.ls_cancelGesture==NO) {
+        return NO;
+    }
     UINavigationController *nav= self.viewControllers.lastObject.childViewControllers.firstObject;
     if (nav.ls_normalPush) {
         if (nav.viewControllers.count<2) {

@@ -1,11 +1,9 @@
 # LSNavigationController
 
-
 #将文件拖到项目里，想要这种效果的导航控制器继承LSNavigationController即可使用常用导航栏效果
 
 ####1.默认就是一直全屏滑动效果
 ####2.如果想要第一次push是全屏滑动，之后都是系统滑动效果，只需要设置vc.ls_normalPush=YES即可，之后再也不用设置，全都是系统效果
-
 
 ![image](https://github.com/lsmakethebest/LSNavigationBarTransition/blob/master/images/show.gif)
 

@@ -1,41 +1,43 @@
 # LSNavigationController
 
-#将文件拖到项目里，想要这种效果的导航控制器继承LSNavigationController即可使用常用导航栏效果
+## 将文件拖到项目里，想要这种效果的导航控制器继承LSNavigationController,将原来项目里的基类继承于LSViewController
+## 每个VC都有一个UINavigationBar,导航控制器的navigationBar被隐藏
 
-####1.默认就是一直全屏滑动效果
-####2.如果想要第一次push是全屏滑动，之后都是系统滑动效果，只需要设置vc.ls_normalPush=YES即可，之后再也不用设置，全都是系统效果
 
-![image](https://github.com/lsmakethebest/LSNavigationBarTransition/blob/master/images/show.gif)
+## 设置UINavigationBar,UIBarButtonItem 和系统使用方式一样
 
-#1.没有设置VC2.ls_normalPush
-######结构如下:Nav->(VC.Nav1.VC1)->(VC.Nav2.VC2)->(VC.Nav3.VC3)->(VC.Nav4.VC4)
 
-###(1)popToRootViewControllerAnimated
-#####在VC4里调用,其实是pop到VC1
+`
+- (void)viewDidLoad{
 
-###(2) popViewControllerAnimated
-#####正常调用即可
+        [super viewDidLoad];
+        self.title=@"第一页";
+        UIBarButtonItem *item=[[UIBarButtonItem alloc]initWithTitle:@"push" style:(UIBarButtonItemStylePlain) target:self action:@selector(click)];
+        self.navigationItem.rightBarButtonItem=item;
+        [self.navigationBar setBackgroundImage:[self imageWithColor:[UIColor orangeColor]] forBarMetrics:UIBarMetricsDefault];
 
-###(3)popToViewController
-#####如果要显示VC2 
-######VC2=self.ls_topNavigationController.viewControllers[1]
-######在VC4里调用  [self.navigationController popToViewController:VC2 animated:YES];
 
-#2.设置了 VC2.ls_normalPush=YES
-######结构如下:Nav->(VC.Nav1.VC1)->(VC.Nav2.VC2)->VC3->VC4-VC5->VC6
+        UILabel *label=[[UILabel alloc]initWithFrame:CGRectMake(100, 200, 100, 100)];
+        [self.view addSubview:label];
+        self.label=label;
+    }
 
-##(1)popToRootViewControllerAnimated
-######VC6里调用,其实是pop到VC2
+`
 
-###(2)popViewControllerAnimated
-######VC6调用会pop到VC5
-######VC2调用会pop到VC1
+## 设置侧滑手势
+`
+@property (nonatomic,assign) BOOL cancelGesture; //取消当前页面手势 不影响其他VC手势使用
+@property (nonatomic,assign) BOOL cancelAllGesture;//取消整个导航控制器手势 如果想在启用必须在设置为NO
+`
 
-###(3)popToViewController
-#####如果要显示VC3 
-######VC3=self.navigationController.viewControllers[1]
-######在VC6里调用  [self.navigationController popToViewController:VC3 animated:YES];
+## 设置下列属性来设置frame.origin.y是从0还是64开始
+`
+    self.edgesForExtendedLayout=UIRectEdgeNone;//代表从64开始 top 从0开始
+`
+## 如果设置完想重载UINavigationBar
+`
+    [self reloadNavigationBar];
+`
 
-####如果要显示VC1 
-######VC1=self.ls_topNavigationController.viewControllers[0]
-######在VC6里调用  [self.navigationController popToViewController:VC1 animated:YES];
+
+

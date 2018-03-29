@@ -24,7 +24,7 @@
     [self.navigationBar setBackgroundImage:[self imageWithColor:[UIColor cyanColor]] forBarMetrics:UIBarMetricsDefault];
     
 //    self.navigationBar.hidden=YES;
-    UITableView *view=[[UITableView alloc]initWithFrame:CGRectMake(0, 0, 375, 603) style:(UITableViewStyleGrouped)];
+    UITableView *view=[[UITableView alloc]initWithFrame:CGRectMake(0, 0, 375, 300) style:(UITableViewStyleGrouped)];
     view.dataSource=self;
     view.delegate=self;
     view.estimatedSectionHeaderHeight=0;
@@ -40,8 +40,8 @@
     UIButton *btn=[[UIButton alloc]init];
     [btn addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
     [btn setTitle:@"back" forState:UIControlStateNormal];
-    btn.backgroundColor=[UIColor yellowColor];
-    btn.frame=CGRectMake(0,617, 50, 50);
+    btn.backgroundColor=[UIColor orangeColor];
+    btn.frame=CGRectMake(100,407, 50, 50);
     [self.view addSubview:btn];
 }
 -(void)back

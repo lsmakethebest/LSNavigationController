@@ -5,7 +5,7 @@
 
 
 ## 设置UINavigationBar,UIBarButtonItem 和系统使用方式一样
-![image](https://github.com/lsmakethebest/LSNavigationController/blob/master/show.gif)
+![image](https://github.com/lsmakethebest/LSNavigationController/blob/master/images/show.gif)
 
 `
 - (void)viewDidLoad{

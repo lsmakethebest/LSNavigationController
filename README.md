@@ -15,11 +15,6 @@
         UIBarButtonItem *item=[[UIBarButtonItem alloc]initWithTitle:@"push" style:(UIBarButtonItemStylePlain) target:self action:@selector(click)];
         self.navigationItem.rightBarButtonItem=item;
         [self.navigationBar setBackgroundImage:[self imageWithColor:[UIColor orangeColor]] forBarMetrics:UIBarMetricsDefault];
-
-
-        UILabel *label=[[UILabel alloc]initWithFrame:CGRectMake(100, 200, 100, 100)];
-        [self.view addSubview:label];
-        self.label=label;
     }
 
 `

@@ -7,11 +7,12 @@
 ## 设置UINavigationBar,UIBarButtonItem 和系统使用方法一样
 ![image](https://github.com/lsmakethebest/LSNavigationController/blob/master/images/show.gif)
 
+## 在UIViewController里设置 ，如果有基类直接在基类设置一遍就不用在设置了
 `
 - (void)viewDidLoad{
 
         [super viewDidLoad];
-        [self reloadNavigationBar];//创建UINavigationBar 必须在设设置item前面
+        [self reloadNavigationBar];//创建UINavigationBar 必须在设设置item前面 也可以在基类统一创建
         self.title=@"第一页";
         UIBarButtonItem *item=[[UIBarButtonItem alloc]initWithTitle:@"push" style:(UIBarButtonItemStylePlain) target:self action:@selector(click)];
         self.navigationItem.rightBarButtonItem=item;

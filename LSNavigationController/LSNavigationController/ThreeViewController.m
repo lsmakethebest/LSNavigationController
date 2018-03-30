@@ -19,6 +19,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.edgesForExtendedLayout=UIRectEdgeNone;
+    self.automaticallyAdjustsScrollViewInsets=NO;
+    [self reloadNavigationBar];
    
     self.view.backgroundColor=[UIColor whiteColor];
     [self.navigationBar setBackgroundImage:[self imageWithColor:[UIColor cyanColor]] forBarMetrics:UIBarMetricsDefault];
@@ -30,12 +33,12 @@
     view.estimatedSectionHeaderHeight=0;
     view.estimatedSectionFooterHeight=0;
     view.estimatedRowHeight=0;
-//    UIView *header=[[UIView alloc]initWithFrame:CGRectMake(0, 0, 0, CGFLOAT_MIN)];
-//    view.tableHeaderView=header;
+    UIView *header=[[UIView alloc]initWithFrame:CGRectMake(0, 0, 0, CGFLOAT_MIN)];
+    view.tableHeaderView=header;
 
     [self.view addSubview:view];
 //    self.cancelGesture=YES;
-    
+
     
     UIButton *btn=[[UIButton alloc]init];
     [btn addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
@@ -61,14 +64,14 @@
 -(void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    self.cancelAllGesture=YES;
+    self.forbidAllGesture=YES;
 
   
 }
 -(void)viewDidDisappear:(BOOL)animated
 {
     [super viewDidDisappear:animated];
-    self.cancelAllGesture=NO;
+    self.forbidAllGesture=NO;
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section

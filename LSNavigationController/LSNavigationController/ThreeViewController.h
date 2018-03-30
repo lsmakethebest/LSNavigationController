@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "LSViewController.h"
-@interface ThreeViewController : LSViewController
+#import "UIViewController+LSNavigationController.h"
+@interface ThreeViewController : UIViewController
 
 @end

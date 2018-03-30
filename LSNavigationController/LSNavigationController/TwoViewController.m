@@ -23,7 +23,7 @@
 //    [self reloadNavigationBar];
     self.navigationBar.hidden=YES;
     self.title=@"第二页";
-    UIBarButtonItem *item=[[UIBarButtonItem alloc]initWithTitle:@"push" style:(UIBarButtonItemStylePlain) target:self action:@selector(click:)];
+    UIBarButtonItem *item=[[UIBarButtonItem alloc]initWithTitle:@"push" style:(UIBarButtonItemStylePlain) target:self action:@selector(push)];
     self.navigationItem.rightBarButtonItem=item;
    
     

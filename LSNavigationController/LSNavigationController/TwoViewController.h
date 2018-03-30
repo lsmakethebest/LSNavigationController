@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "LSViewController.h"
-@interface TwoViewController : LSViewController
+#import "UIViewController+LSNavigationController.h"
+@interface TwoViewController : UIViewController
 
 @end

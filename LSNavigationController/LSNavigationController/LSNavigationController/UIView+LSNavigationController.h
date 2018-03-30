@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "UINavigationBar+LSNavigationController.h"
 @interface UIView (LSNavigationController)
-- (void)ls_nav_setEnlargeEdgeWithTop:(CGFloat) top right:(CGFloat) right bottom:(CGFloat) bottom left:(CGFloat) left;
-- (void)ls_nav_setEnlargeEdge:(CGFloat) size;
+
+@property (nonatomic,assign) BOOL ls_nav_enlargeTop;
+
 @end

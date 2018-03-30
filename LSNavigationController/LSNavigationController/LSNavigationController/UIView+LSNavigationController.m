@@ -16,60 +16,32 @@
 #import "UIView+LSNavigationController.h"
 #import <objc/runtime.h>
 #import "LSNavigationBar.h"
-@implementation UIView (LSNavigationController)
 
-static char topNameKey;
-static char rightNameKey;
-static char bottomNameKey;
-static char leftNameKey;
+@implementation UIView (LSNavigationController)
 
 +(void)load
 {
     [UINavigationBar ls_navBar_exchangeInstanceMethod:[self class] originalSel:@selector(hitTest:withEvent:) newSel:@selector(ls_hitTest:withEvent:)];
     
 }
-- (void)ls_nav_setEnlargeEdge:(CGFloat) size
+
+-(BOOL)ls_nav_enlargeTop
 {
-    objc_setAssociatedObject(self, &topNameKey, [NSNumber numberWithFloat:size], OBJC_ASSOCIATION_COPY_NONATOMIC);
-    objc_setAssociatedObject(self, &rightNameKey, [NSNumber numberWithFloat:size], OBJC_ASSOCIATION_COPY_NONATOMIC);
-    objc_setAssociatedObject(self, &bottomNameKey, [NSNumber numberWithFloat:size], OBJC_ASSOCIATION_COPY_NONATOMIC);
-    objc_setAssociatedObject(self, &leftNameKey, [NSNumber numberWithFloat:size], OBJC_ASSOCIATION_COPY_NONATOMIC);
+    return [objc_getAssociatedObject(self, _cmd) boolValue];
 }
 
-- (void)ls_nav_setEnlargeEdgeWithTop:(CGFloat) top right:(CGFloat) right bottom:(CGFloat) bottom left:(CGFloat) left
+-(void)setLs_nav_enlargeTop:(BOOL)ls_nav_enlargeTop
 {
-    objc_setAssociatedObject(self, &topNameKey, [NSNumber numberWithFloat:top], OBJC_ASSOCIATION_COPY_NONATOMIC);
-    objc_setAssociatedObject(self, &rightNameKey, [NSNumber numberWithFloat:right], OBJC_ASSOCIATION_COPY_NONATOMIC);
-    objc_setAssociatedObject(self, &bottomNameKey, [NSNumber numberWithFloat:bottom], OBJC_ASSOCIATION_COPY_NONATOMIC);
-    objc_setAssociatedObject(self, &leftNameKey, [NSNumber numberWithFloat:left], OBJC_ASSOCIATION_COPY_NONATOMIC);
+    objc_setAssociatedObject(self, @selector(ls_nav_enlargeTop), @(ls_nav_enlargeTop), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
-- (CGRect) enlargedRect
-{
-    NSNumber* topEdge = objc_getAssociatedObject(self, &topNameKey);
-    NSNumber* rightEdge = objc_getAssociatedObject(self, &rightNameKey);
-    NSNumber* bottomEdge = objc_getAssociatedObject(self, &bottomNameKey);
-    NSNumber* leftEdge = objc_getAssociatedObject(self, &leftNameKey);
-    if (topEdge && rightEdge && bottomEdge && leftEdge)
-    {
-        return CGRectMake(self.bounds.origin.x - leftEdge.floatValue,
-                          self.bounds.origin.y - topEdge.floatValue,
-                          self.bounds.size.width + leftEdge.floatValue + rightEdge.floatValue,
-                          self.bounds.size.height + topEdge.floatValue + bottomEdge.floatValue);
-    }
-    else
-    {
-        return self.bounds;
-    }
-}
 - (UIView*) ls_hitTest:(CGPoint) point withEvent:(UIEvent*) event
 {
-    CGRect rect = [self enlargedRect];
     UIView *view=[self ls_hitTest:point withEvent:event];
     if (view) {
         return view;
     }else{
-        if (CGRectEqualToRect(rect, self.bounds))
+        if (self.ls_nav_enlargeTop==NO)
         {
             return view;
         }else{

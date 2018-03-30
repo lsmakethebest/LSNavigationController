@@ -10,7 +10,7 @@
 
 #import "LSViewController.h"
 #import "UIView+LSNavigationController.h"
-#import "LSNavigationItem.h"
+#import "LSNavigationBar.h"
 @interface LSViewController ()<UINavigationBarDelegate>
 @property (nonatomic,strong) LSNavigationItem *item;
 @property (nonatomic,weak) LSNavigationController *ls_navigationController;
@@ -47,14 +47,15 @@
     if (self.edgesForExtendedLayout==UIRectEdgeNone) {
         navigationBar.frame=CGRectMake(0, -44, size.width, 44);
         self.view.clipsToBounds=NO;
-        [self.view ls_nav_setEnlargeEdgeWithTop:44 right:0 bottom:0 left:0];
+        self.view.ls_nav_enlargeTop=YES;
     }else{
         navigationBar.frame=CGRectMake(0, size.height, size.width, 44);
     }
     
     [self.view addSubview:navigationBar];
-    _navigationBar.items=@[self.item];
     _navigationBar=navigationBar;
+//    navigationBar.items=@[self.item];
+    [_navigationBar pushNavigationItem:self.item animated:NO];
     
     [self setDefaultBackItem];
 }

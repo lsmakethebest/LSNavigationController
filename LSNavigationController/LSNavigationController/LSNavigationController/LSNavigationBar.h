@@ -17,6 +17,8 @@
 
 @end
 
+@interface LSNavigationItem : UINavigationItem
 
+@end
 
 

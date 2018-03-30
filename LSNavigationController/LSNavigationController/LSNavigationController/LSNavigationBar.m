@@ -34,12 +34,19 @@
         }
     }
 }
--(void)setThemeBackgroundImage:(UIImage *)image{
-    [self setBackgroundImage:image forBarMetrics:UIBarMetricsDefault];
-}
--(void)pushNavigationItem:(UINavigationItem *)item animated:(BOOL)animated
+
+@end
+
+
+
+@implementation LSNavigationItem
+
+-(void)setLeftBarButtonItem:(UIBarButtonItem *)leftBarButtonItem
 {
-    [super pushNavigationItem:item animated:animated];
+    //解决ios11以下系统 设置leftBarButtonItem不显示问题 通过延迟也可以解决 但是此方法不用延时也可以解决
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [super setLeftBarButtonItem:leftBarButtonItem];
+    });
 }
 
 @end

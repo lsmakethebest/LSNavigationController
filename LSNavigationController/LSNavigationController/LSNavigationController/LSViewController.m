@@ -24,12 +24,24 @@
     self.edgesForExtendedLayout=UIRectEdgeNone;//代表从64开始 top 从0开始
     [self reloadNavigationBar];
 }
--(void)reloadNavigationBar
+
+-(LSNavigationBar *)navigationBar{
+    
+    if (_navigationBar==nil) {
+        [self reloadNavigationBar];
+    }
+    return _navigationBar;
+}
+-(void)removeNavigationBar
 {
     if (_navigationBar) {
         [_navigationBar removeFromSuperview];
         _item=nil;
     }
+}
+-(void)reloadNavigationBar
+{
+    [self removeNavigationBar];
     CGSize size = [UIApplication sharedApplication].statusBarFrame.size;
     LSNavigationBar *navigationBar=[[LSNavigationBar alloc]init];
     if (self.edgesForExtendedLayout==UIRectEdgeNone) {
@@ -41,11 +53,16 @@
     }
     
     [self.view addSubview:navigationBar];
-    self.navigationBar=navigationBar;
-    self.navigationBar.delegate=self;
-//    navigationBar.items=@[self.item];
-    [navigationBar pushNavigationItem:self.item animated:NO];
-    if (self.navigationController.viewControllers.count>1){    
+    _navigationBar.items=@[self.item];
+    _navigationBar=navigationBar;
+    
+    [self setDefaultBackItem];
+}
+
+-(void)setDefaultBackItem
+{
+    //设置返回item
+    if (self.navigationController.viewControllers.count>1){
         UIBarButtonItem *leftItem=[[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"navBar_back_icon"] style:(UIBarButtonItemStylePlain) target:self action:@selector(navigationBarClickBack)];
         self.item.leftBarButtonItem=leftItem;
     }

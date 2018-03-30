@@ -10,8 +10,10 @@
 
 #import "LSViewController.h"
 #import "UIView+LSNavigationController.h"
+#import "LSNavigationItem.h"
 @interface LSViewController ()<UINavigationBarDelegate>
-@property (nonatomic,strong) UINavigationItem *item;
+@property (nonatomic,strong) LSNavigationItem *item;
+@property (nonatomic,weak) LSNavigationController *ls_navigationController;
 @end
 
 @implementation LSViewController
@@ -24,16 +26,16 @@
 }
 -(void)reloadNavigationBar
 {
-    if (self.navigationBar) {
-        [self.navigationBar removeFromSuperview];
-        self.item=nil;
+    if (_navigationBar) {
+        [_navigationBar removeFromSuperview];
+        _item=nil;
     }
-    [self.view ls_nav_setEnlargeEdgeWithTop:44 right:0 bottom:0 left:0];
     CGSize size = [UIApplication sharedApplication].statusBarFrame.size;
     LSNavigationBar *navigationBar=[[LSNavigationBar alloc]init];
     if (self.edgesForExtendedLayout==UIRectEdgeNone) {
         navigationBar.frame=CGRectMake(0, -44, size.width, 44);
         self.view.clipsToBounds=NO;
+        [self.view ls_nav_setEnlargeEdgeWithTop:44 right:0 bottom:0 left:0];
     }else{
         navigationBar.frame=CGRectMake(0, size.height, size.width, 44);
     }
@@ -41,7 +43,8 @@
     [self.view addSubview:navigationBar];
     self.navigationBar=navigationBar;
     self.navigationBar.delegate=self;
-    navigationBar.items=@[self.item];
+//    navigationBar.items=@[self.item];
+    [navigationBar pushNavigationItem:self.item animated:NO];
     if (self.navigationController.viewControllers.count>1){    
         UIBarButtonItem *leftItem=[[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"navBar_back_icon"] style:(UIBarButtonItemStylePlain) target:self action:@selector(navigationBarClickBack)];
         self.item.leftBarButtonItem=leftItem;
@@ -92,7 +95,7 @@
 -(UINavigationItem *)item
 {
     if (_item==nil) {
-        _item=[[UINavigationItem alloc]init];
+        _item=[[LSNavigationItem alloc]init];
     }
     return _item;
 }
@@ -123,7 +126,6 @@
     
     return newImage;
 }
-
 
 
 @end

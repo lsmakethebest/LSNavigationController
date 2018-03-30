@@ -49,6 +49,7 @@
 {
     if ([self isKindOfClass:[LSTopNavigationBar class]]) {
         item=[[UINavigationItem alloc]init];
+        item.leftBarButtonItem=[UIBarButtonItem new];
     }
     [self ls_pushNavigationItem:item];
 }

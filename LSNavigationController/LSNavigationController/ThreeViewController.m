@@ -19,7 +19,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title=@"第三页";
+   
     self.view.backgroundColor=[UIColor whiteColor];
     [self.navigationBar setBackgroundImage:[self imageWithColor:[UIColor cyanColor]] forBarMetrics:UIBarMetricsDefault];
     
@@ -43,7 +43,16 @@
     btn.backgroundColor=[UIColor orangeColor];
     btn.frame=CGRectMake(100,407, 50, 50);
     [self.view addSubview:btn];
+    self.navigationItem.backBarButtonItem=nil;
+   
+    UIView *view2=[[UIView alloc]initWithFrame:CGRectMake(0, 0, 44, 44)];
+    view2.backgroundColor=[UIColor redColor];
+    UIBarButtonItem *item2=[[UIBarButtonItem alloc]initWithCustomView:view2];
+    self.title=@"第三页";
+    self.navigationItem.leftBarButtonItem=item2;
 }
+
+
 -(void)back
 {
     [self.navigationController popViewControllerAnimated:YES];
@@ -52,7 +61,9 @@
 -(void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-//    self.cancelAllGesture=YES;
+    self.cancelAllGesture=YES;
+
+  
 }
 -(void)viewDidDisappear:(BOOL)animated
 {

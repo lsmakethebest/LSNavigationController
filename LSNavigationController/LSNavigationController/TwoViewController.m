@@ -36,7 +36,9 @@
     [btn setTitle:@"push" forState:UIControlStateNormal];
     [btn addTarget:self action:@selector(push) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:btn];
+    NSLog(@"22222222");
     
+  
 }
 
 

@@ -18,6 +18,7 @@
 		287D29C520637C6E0004F2C0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 287D29C420637C6E0004F2C0 /* main.m */; };
 		287D29CF20637C6E0004F2C0 /* LSNavigationControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 287D29CE20637C6E0004F2C0 /* LSNavigationControllerTests.m */; };
 		287D29DA20637C6E0004F2C0 /* LSNavigationControllerUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 287D29D920637C6E0004F2C0 /* LSNavigationControllerUITests.m */; };
+		28DAD66C206DDB380023D7DE /* LSNavigationItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 28DAD66B206DDB380023D7DE /* LSNavigationItem.m */; };
 		28E7C6CF206C9F9C00B387B0 /* LSNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28E7C6C5206C9F9C00B387B0 /* LSNavigationController.m */; };
 		28E7C6D0206C9F9C00B387B0 /* UINavigationBar+LSNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28E7C6C6206C9F9C00B387B0 /* UINavigationBar+LSNavigationController.m */; };
 		28E7C6D1206C9F9C00B387B0 /* LSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28E7C6C8206C9F9C00B387B0 /* LSViewController.m */; };
@@ -64,6 +65,8 @@
 		287D29D520637C6E0004F2C0 /* LSNavigationControllerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LSNavigationControllerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		287D29D920637C6E0004F2C0 /* LSNavigationControllerUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LSNavigationControllerUITests.m; sourceTree = "<group>"; };
 		287D29DB20637C6E0004F2C0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		28DAD66A206DDB380023D7DE /* LSNavigationItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LSNavigationItem.h; sourceTree = "<group>"; };
+		28DAD66B206DDB380023D7DE /* LSNavigationItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LSNavigationItem.m; sourceTree = "<group>"; };
 		28E7C6C5206C9F9C00B387B0 /* LSNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSNavigationController.m; sourceTree = "<group>"; };
 		28E7C6C6206C9F9C00B387B0 /* UINavigationBar+LSNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+LSNavigationController.m"; sourceTree = "<group>"; };
 		28E7C6C7206C9F9C00B387B0 /* UIView+LSNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+LSNavigationController.h"; sourceTree = "<group>"; };
@@ -170,6 +173,8 @@
 				28E7C6C8206C9F9C00B387B0 /* LSViewController.m */,
 				28E7C6CD206C9F9C00B387B0 /* LSNavigationBar.h */,
 				28E7C6C9206C9F9C00B387B0 /* LSNavigationBar.m */,
+				28DAD66A206DDB380023D7DE /* LSNavigationItem.h */,
+				28DAD66B206DDB380023D7DE /* LSNavigationItem.m */,
 				28E7C6C7206C9F9C00B387B0 /* UIView+LSNavigationController.h */,
 				28E7C6CA206C9F9C00B387B0 /* UIView+LSNavigationController.m */,
 				28E7C6CB206C9F9C00B387B0 /* UINavigationBar+LSNavigationController.h */,
@@ -312,6 +317,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28DAD66C206DDB380023D7DE /* LSNavigationItem.m in Sources */,
 				28E7C6CF206C9F9C00B387B0 /* LSNavigationController.m in Sources */,
 				2826403B2069E9E900C82A2E /* TwoViewController.m in Sources */,
 				28E7C6D3206C9F9C00B387B0 /* UIView+LSNavigationController.m in Sources */,

@@ -37,7 +37,7 @@
 
     if ([viewController isKindOfClass:[LSViewController class]]) {
         LSViewController *vc=(LSViewController*)viewController;
-        vc.ls_navigationController=self;
+        [vc  setValue:self forKeyPath:@"ls_navigationController"];
     }
     if (self.viewControllers.count>=1) {
         viewController.hidesBottomBarWhenPushed=YES;

@@ -29,6 +29,12 @@
     UILabel *label=[[UILabel alloc]initWithFrame:CGRectMake(100, 200, 100, 100)];
     [self.view addSubview:label];
     self.label=label;
+    NSLog(@"one ---------------");
+    
+    UIView *view2=[[UIView alloc]initWithFrame:CGRectMake(0, 0, 44, 44)];
+    view2.backgroundColor=[UIColor redColor];
+    UIBarButtonItem *item2=[[UIBarButtonItem alloc]initWithCustomView:view2];
+    self.navigationItem.leftBarButtonItem=item2;
 }
 -(void)click
 {

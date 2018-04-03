@@ -29,6 +29,8 @@
     
     UILabel *label=[[UILabel alloc]initWithFrame:CGRectMake(100, 200, 100, 100)];
     [self.view addSubview:label];
+    label.font=[UIFont systemFontOfSize:14];
+
     self.label=label;
     NSLog(@"one ---------------");
     

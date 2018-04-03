@@ -10,6 +10,7 @@
 
 #import "TwoViewController.h"
 #import "ThreeViewController.h"
+
 @interface TwoViewController ()
 
 @end
@@ -38,7 +39,11 @@
     [self.view addSubview:btn];
     NSLog(@"22222222");
     
-  
+    CGRect rect=CGRectMake(0, -100, 375, 300);
+    CGPoint point=CGPointMake(50, 199.999);
+    BOOL v=CGRectContainsPoint(rect, point);
+    NSLog(@"");
+    
 }
 
 

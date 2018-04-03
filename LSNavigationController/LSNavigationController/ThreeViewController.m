@@ -10,7 +10,7 @@
 //
 
 #import "ThreeViewController.h"
-
+#import "UIView+LSNavigationController.h"
 @interface ThreeViewController ()<UITableViewDataSource,UITableViewDelegate>
 
 @end
@@ -20,16 +20,17 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.edgesForExtendedLayout=UIRectEdgeNone;
-    self.automaticallyAdjustsScrollViewInsets=NO;
+    self.automaticallyAdjustsScrollViewInsets=YES;
     [self reloadNavigationBar];
    
     self.view.backgroundColor=[UIColor whiteColor];
     [self.navigationBar setBackgroundImage:[self imageWithColor:[UIColor cyanColor]] forBarMetrics:UIBarMetricsDefault];
     
-//    self.navigationBar.hidden=YES;
-    UITableView *view=[[UITableView alloc]initWithFrame:CGRectMake(0, 0, 375, 300) style:(UITableViewStyleGrouped)];
+
+    UITableView *view=[[UITableView alloc]initWithFrame:CGRectMake(0, -64, 375, 300) style:(UITableViewStyleGrouped)];
     view.dataSource=self;
     view.delegate=self;
+
     view.estimatedSectionHeaderHeight=0;
     view.estimatedSectionFooterHeight=0;
     view.estimatedRowHeight=0;
@@ -37,7 +38,6 @@
     view.tableHeaderView=header;
 
     [self.view addSubview:view];
-//    self.cancelGesture=YES;
 
     
     UIButton *btn=[[UIButton alloc]init];
@@ -46,14 +46,38 @@
     btn.backgroundColor=[UIColor orangeColor];
     btn.frame=CGRectMake(100,407, 50, 50);
     [self.view addSubview:btn];
-    self.navigationItem.backBarButtonItem=nil;
+    
+    
    
-    UIView *view2=[[UIView alloc]initWithFrame:CGRectMake(0, 0, 44, 44)];
-    view2.backgroundColor=[UIColor redColor];
-    UIBarButtonItem *item2=[[UIBarButtonItem alloc]initWithCustomView:view2];
+
+
+    
+    
+    
     self.title=@"第三页";
-    self.navigationItem.leftBarButtonItem=item2;
+    self.navigationItem.leftBarButtonItem=[[UIBarButtonItem alloc]initWithTitle:@"back" style:(UIBarButtonItemStylePlain) target:self action:@selector(back)];
+    
+    
+    self.navigationItem.rightBarButtonItem=[[UIBarButtonItem alloc]initWithTitle:@"show" style:(UIBarButtonItemStylePlain) target:self action:@selector(show)];
+    
+    
 }
+
+-(void)show
+{
+
+    UIButton *button=[[UIButton alloc]initWithFrame:CGRectMake(0, -64, 375, 667)];
+    button.backgroundColor=[[UIColor orangeColor]colorWithAlphaComponent:0.3];
+    button.viewLevel=UIViewLevelHigh;
+    [self.view addSubview:button];
+    [button addTarget:self action:@selector(hide:) forControlEvents:UIControlEventTouchUpInside];
+}
+
+-(void)hide:(UIButton*)btn
+{
+    [btn removeFromSuperview];
+}
+
 
 
 -(void)back

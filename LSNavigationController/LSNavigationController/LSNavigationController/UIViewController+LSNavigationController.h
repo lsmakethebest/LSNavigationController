@@ -7,15 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
+
 #import "LSNavigationBar.h"
-#import "LSNavigationController.h"
-#import "UINavigationBar+LSNavigationController.h"
+
+
 @interface UIViewController (LSNavigationController)
 
 @property (nonatomic,weak) LSNavigationBar *navigationBar;
 
 @property (nonatomic,assign) BOOL cancelGesture; //取消当前页面手势 不影响其他VC手势使用
 @property (nonatomic,assign) BOOL forbidAllGesture;//禁用整个导航控制器手势 如果想在启用必须在设置为NO
+
+
 
 //创建UINavigationBar
 -(void)reloadNavigationBar;

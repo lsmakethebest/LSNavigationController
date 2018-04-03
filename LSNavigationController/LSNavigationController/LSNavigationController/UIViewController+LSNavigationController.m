@@ -9,6 +9,10 @@
 #import "UIViewController+LSNavigationController.h"
 #import <objc/runtime.h>
 #import "UIView+LSNavigationController.h"
+#import "LSNavigationController.h"
+#import "UINavigationBar+LSNavigationController.h"
+
+
 @interface UIViewController ()
 
 
@@ -20,10 +24,8 @@
 @implementation UIViewController (LSNavigationController)
 
 +(void)load{
-//    [UINavigationBar ls_navBar_exchangeInstanceMethod:[self class] originalSel:@selector(viewDidLoad) newSel:@selector(ls_viewDidLoad)];
+
     [UINavigationBar ls_navBar_exchangeInstanceMethod:[self class] originalSel:@selector(viewDidAppear:) newSel:@selector(ls_viewDidAppear:)];
-    
-    [UINavigationBar ls_navBar_exchangeInstanceMethod:[self class] originalSel:@selector(viewDidLayoutSubviews) newSel:@selector(ls_viewDidLayoutSubviews)];
     
     [UINavigationBar ls_navBar_exchangeInstanceMethod:[self class] originalSel:@selector(navigationItem) newSel:@selector(ls_navigationItem)];
     
@@ -32,11 +34,6 @@
 }
 
 //#pragma mark - 以下为方法替换
-//-(void)ls_viewDidLoad
-//{
-//    [self ls_viewDidLoad];
-//
-//}
 -(void)ls_setTitle:(NSString *)title
 {
     [self ls_setTitle:title];
@@ -44,13 +41,7 @@
         self.ls_navigation_item.title=title;
     }
 }
--(void)ls_viewDidLayoutSubviews
-{
-    [self ls_viewDidLayoutSubviews];
-    if (self.ls_navigation_item) {
-        [self bringNavigationBarToFront];
-    }
-}
+
 
 -(void)ls_viewDidAppear:(BOOL)animated
 {
@@ -108,20 +99,23 @@
     [self removeNavigationBar];
     CGSize size = [UIApplication sharedApplication].statusBarFrame.size;
     LSNavigationBar *navigationBar=[[LSNavigationBar alloc]init];
+//    navigationBar.layer.zPosition=10000;
     if (self.edgesForExtendedLayout==UIRectEdgeNone) {
         navigationBar.frame=CGRectMake(0, -44, size.width, 44);
         self.view.clipsToBounds=NO;
         self.view.ls_nav_enlargeTop=YES;
     }else{
         navigationBar.frame=CGRectMake(0, size.height, size.width, 44);
+        self.view.ls_nav_enlargeTop=YES;
     }
+    
+    self.navigationBar=navigationBar;
     
     [self.view addSubview:navigationBar];
     self.ls_navigation_item=[[LSNavigationItem alloc]init];
     navigationBar.items=@[self.ls_navigation_item];
-    self.navigationBar=navigationBar;
     
-    [self setDefaultBackItem];
+//    [self setDefaultBackItem];
 }
 -(void)navigationBarClickBack
 {

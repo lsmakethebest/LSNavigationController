@@ -7,9 +7,19 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "UINavigationBar+LSNavigationController.h"
+
+
+typedef NS_ENUM(NSInteger,UIViewLevel)
+{
+    
+    UIViewLevelLow=0,
+    UIViewLevelMiddle,
+    UIViewLevelHigh
+};
+
 @interface UIView (LSNavigationController)
 
 @property (nonatomic,assign) BOOL ls_nav_enlargeTop;
+@property (nonatomic,assign) UIViewLevel viewLevel;
 
 @end

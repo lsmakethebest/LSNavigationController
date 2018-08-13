@@ -32,6 +32,7 @@
 ``
     //设置要添加view的view.viewLevel即可 
     view.viewLevel=UIViewLevelHigh;
+    //然后再addSubview
 ``
 
 

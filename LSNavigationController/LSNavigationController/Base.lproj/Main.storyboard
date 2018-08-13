@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="bjG-n4-JU8">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="bjG-n4-JU8">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -14,6 +13,10 @@
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="GTt-ua-2qv"/>
+                        <viewControllerLayoutGuide type="bottom" id="Kle-Cg-Blr"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -43,7 +46,6 @@
                             <constraint firstItem="6aM-BV-7Od" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="MOS-1U-YnG"/>
                             <constraint firstItem="6aM-BV-7Od" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="284" id="RfR-wP-uRr"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="1we-fS-gdK"/>
                     <connections>
@@ -58,6 +60,10 @@
         <scene sceneID="g2s-WB-1Jq">
             <objects>
                 <viewController id="L1r-fr-yUg" customClass="TwoViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Wf0-mQ-bfM"/>
+                        <viewControllerLayoutGuide type="bottom" id="Jam-eG-lkv"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Ova-bH-9fr">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -72,7 +78,6 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.57479069415010708" blue="0.47778006891032077" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                        <viewLayoutGuide key="safeArea" id="zHb-wK-fs3"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IXi-Tx-pzm" userLabel="First Responder" sceneMemberID="firstResponder"/>

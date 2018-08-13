@@ -8,7 +8,6 @@
 
 #import "UIViewController+LSNavigationController.h"
 #import <objc/runtime.h>
-#import "UIView+LSNavigationController.h"
 #import "LSNavigationController.h"
 #import "UINavigationBar+LSNavigationController.h"
 
@@ -77,16 +76,6 @@
     [self.view bringSubviewToFront:self.navigationBar];
 }
 
--(void)setDefaultBackItem
-{
-    //设置返回item
-    if (self.navigationController.viewControllers.count>1){
-        UIBarButtonItem *leftItem=[[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"navBar_back_icon"] style:(UIBarButtonItemStylePlain) target:self action:@selector(navigationBarClickBack)];
-        self.ls_navigation_item.leftBarButtonItem=leftItem;
-    }
-    
-}
-
 -(void)removeNavigationBar
 {
     if (self.navigationBar) {
@@ -99,30 +88,18 @@
     [self removeNavigationBar];
     CGSize size = [UIApplication sharedApplication].statusBarFrame.size;
     LSNavigationBar *navigationBar=[[LSNavigationBar alloc]init];
-//    navigationBar.layer.zPosition=10000;
-    if (self.edgesForExtendedLayout==UIRectEdgeNone) {
-        navigationBar.frame=CGRectMake(0, -44, size.width, 44);
-        self.view.clipsToBounds=NO;
-        self.view.ls_nav_enlargeTop=YES;
-    }else{
-        navigationBar.frame=CGRectMake(0, size.height, size.width, 44);
-        self.view.ls_nav_enlargeTop=YES;
-    }
+
+    self.edgesForExtendedLayout=UIRectEdgeTop;
+    navigationBar.frame=CGRectMake(0, size.height, size.width, 44);
+    self.view.ls_isViewControllerBaseView=YES;
     
     self.navigationBar=navigationBar;
-    
     [self.view addSubview:navigationBar];
     self.ls_navigation_item=[[LSNavigationItem alloc]init];
     navigationBar.items=@[self.ls_navigation_item];
-    
-//    [self setDefaultBackItem];
-}
--(void)navigationBarClickBack
-{
-    [self.navigationController popViewControllerAnimated:YES];
 }
 
-- (UIImage*)imageWithColor:(UIColor*)color
+- (UIImage*)ls_imageWithColor:(UIColor*)color
 {
     CGRect rect=CGRectMake(0.0f, 0.0f, 1.0f, 1.0f);
     UIGraphicsBeginImageContext(rect.size);
@@ -131,7 +108,6 @@
     CGContextFillRect(context, rect);
     UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
-    
     return newImage;
 }
 
@@ -176,17 +152,6 @@
 -(BOOL)cancelGesture
 {
      return  [objc_getAssociatedObject(self, _cmd) boolValue];
-}
-
--(void)setForbidAllGesture:(BOOL)forbidAllGesture
-{
-    LSNavigationController *nav=self.ls_navigationController;
-    nav.cancelGesture=forbidAllGesture;
-}
--(BOOL)forbidAllGesture
-{
-    return self.navigationController.cancelGesture;
-    
 }
 
 

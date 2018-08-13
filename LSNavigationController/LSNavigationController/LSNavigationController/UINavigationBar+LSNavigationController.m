@@ -10,7 +10,8 @@
 
 #import "UINavigationBar+LSNavigationController.h"
 #import <objc/runtime.h>
-#import "LSNavigationBar.h"
+#import "LSNavigationController.h"
+
 
 @implementation UINavigationBar (LSNavigationController)
 
@@ -66,4 +67,42 @@
 @end
 
 
+
+@implementation UIView (LSNavigationController)
+
++(void)load{
+    [UINavigationBar ls_navBar_exchangeInstanceMethod:[self class] originalSel:@selector(didAddSubview:) newSel:@selector(ls_didAddSubview:)];
+}
+-(BOOL)ls_isViewControllerBaseView{
+    return [objc_getAssociatedObject(self, _cmd) boolValue];
+}
+
+-(void)setLs_isViewControllerBaseView:(BOOL)ls_isViewControllerBaseView{
+    objc_setAssociatedObject(self, @selector(ls_isViewControllerBaseView), @(ls_isViewControllerBaseView), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+-(void)setViewLevel:(UIViewLevel)viewLevel{
+    objc_setAssociatedObject(self, @selector(viewLevel), @(viewLevel), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
+-(UIViewLevel)viewLevel{
+    return [objc_getAssociatedObject(self, _cmd) integerValue];
+}
+
+
+-(void)ls_didAddSubview:(UIView *)subview
+{
+    [self ls_didAddSubview:subview];
+    if (self.ls_isViewControllerBaseView) {
+        if (subview.viewLevel==UIViewLevelHigh) {
+            return;
+        }
+        UIViewController *vc= (UIViewController*)[self nextResponder];
+        if ([vc isKindOfClass:[UIViewController class]]) {
+            if(vc.navigationBar){
+                [self bringSubviewToFront:vc.navigationBar];
+            }
+        }
+    }
+}
+@end
 

@@ -17,11 +17,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     [self reloadNavigationBar];
     
     [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(handleTime) userInfo:nil repeats:YES];
     
-    [self.navigationBar setBackgroundImage:[self imageWithColor:[UIColor orangeColor]] forBarMetrics:UIBarMetricsDefault];
+    [self.navigationBar setBackgroundImage:[self ls_imageWithColor:[UIColor orangeColor]] forBarMetrics:UIBarMetricsDefault];
     
     UIBarButtonItem *item=[[UIBarButtonItem alloc]initWithTitle:@"push" style:(UIBarButtonItemStylePlain) target:self action:@selector(click)];
     self.navigationItem.rightBarButtonItem=item;
@@ -32,10 +33,28 @@
     label.font=[UIFont systemFontOfSize:14];
 
     self.label=label;
-    NSLog(@"one ---------------");
+   
     
-  
+    UIButton *close=[[UIButton alloc]init];
+    close.frame=CGRectMake(100, 100, 140, 50);
+    [close setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+    [close setTitle:@"禁止手势打开" forState:UIControlStateNormal];
+    [close setTitle:@"禁止手势关闭" forState:UIControlStateSelected];
+    [close addTarget:self action:@selector(closeAll:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:close];
 }
+-(void)closeAll:(UIButton*)btn
+{
+    if ([btn.currentTitle containsString:@"打开"]) {
+        self.navigationController.cancelGesture=YES;
+        btn.selected=YES;
+    }else{
+        self.navigationController.cancelGesture=NO;
+        btn.selected=NO;
+    }
+}
+
+
 -(void)click
 {
     [self.navigationController pushViewController:[[TwoViewController alloc]init] animated:YES];

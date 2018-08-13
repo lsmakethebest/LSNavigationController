@@ -10,7 +10,8 @@
 //
 
 #import "ThreeViewController.h"
-#import "UIView+LSNavigationController.h"
+#import "OneViewController.h"
+#import "FourViewController.h"
 @interface ThreeViewController ()<UITableViewDataSource,UITableViewDelegate>
 
 @end
@@ -19,15 +20,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.edgesForExtendedLayout=UIRectEdgeNone;
-    self.automaticallyAdjustsScrollViewInsets=YES;
     [self reloadNavigationBar];
-   
+   self.cancelGesture=YES;
+    
     self.view.backgroundColor=[UIColor whiteColor];
-    [self.navigationBar setBackgroundImage:[self imageWithColor:[UIColor cyanColor]] forBarMetrics:UIBarMetricsDefault];
+    [self.navigationBar setBackgroundImage:[self ls_imageWithColor:[UIColor cyanColor]] forBarMetrics:UIBarMetricsDefault];
     
 
-    UITableView *view=[[UITableView alloc]initWithFrame:CGRectMake(0, -64, 375, 300) style:(UITableViewStyleGrouped)];
+
+    UITableView *view=[[UITableView alloc]initWithFrame:CGRectMake(0, 0, 375, 300) style:(UITableViewStyleGrouped)];
     view.dataSource=self;
     view.delegate=self;
 
@@ -48,36 +49,18 @@
     [self.view addSubview:btn];
     
     
-   
-
-
-    
-    
     
     self.title=@"第三页";
     self.navigationItem.leftBarButtonItem=[[UIBarButtonItem alloc]initWithTitle:@"back" style:(UIBarButtonItemStylePlain) target:self action:@selector(back)];
     
-    
-    self.navigationItem.rightBarButtonItem=[[UIBarButtonItem alloc]initWithTitle:@"show" style:(UIBarButtonItemStylePlain) target:self action:@selector(show)];
-    
-    
+    self.navigationItem.rightBarButtonItem=[[UIBarButtonItem alloc]initWithTitle:@"push" style:(UIBarButtonItemStylePlain) target:self action:@selector(push)];
+
 }
 
--(void)show
+-(void)push
 {
-
-    UIButton *button=[[UIButton alloc]initWithFrame:CGRectMake(0, -64, 375, 667)];
-    button.backgroundColor=[[UIColor orangeColor]colorWithAlphaComponent:0.3];
-    button.viewLevel=UIViewLevelHigh;
-    [self.view addSubview:button];
-    [button addTarget:self action:@selector(hide:) forControlEvents:UIControlEventTouchUpInside];
+    [self.navigationController pushViewController:[[FourViewController alloc]init] animated:YES];
 }
-
--(void)hide:(UIButton*)btn
-{
-    [btn removeFromSuperview];
-}
-
 
 
 -(void)back
@@ -85,18 +68,7 @@
     [self.navigationController popViewControllerAnimated:YES];
     
 }
--(void)viewDidAppear:(BOOL)animated
-{
-    [super viewDidAppear:animated];
-    self.forbidAllGesture=YES;
 
-  
-}
--(void)viewDidDisappear:(BOOL)animated
-{
-    [super viewDidDisappear:animated];
-    self.forbidAllGesture=NO;
-}
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
@@ -116,5 +88,6 @@
     cell.textLabel.text=[NSString stringWithFormat:@"%ld",indexPath.row];
     return cell;
 }
+
 
 @end

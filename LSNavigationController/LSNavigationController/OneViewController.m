@@ -45,13 +45,8 @@
 }
 -(void)closeAll:(UIButton*)btn
 {
-    if ([btn.currentTitle containsString:@"打开"]) {
-        self.navigationController.cancelGesture=YES;
-        btn.selected=YES;
-    }else{
-        self.navigationController.cancelGesture=NO;
-        btn.selected=NO;
-    }
+    self.navigationController.cancelGesture=!self.navigationController.cancelGesture;
+    btn.selected=self.navigationController.cancelGesture;
 }
 
 

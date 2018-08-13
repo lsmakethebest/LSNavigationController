@@ -30,7 +30,7 @@
    
     
     
-    UIButton *btn=[[UIButton alloc]initWithFrame:CGRectMake(50, 64, 100, 50)];
+    UIButton *btn=[[UIButton alloc]initWithFrame:CGRectMake(50, 100, 100, 50)];
     [btn setTitle:@"showView" forState:UIControlStateNormal];
     [btn addTarget:self action:@selector(show) forControlEvents:UIControlEventTouchUpInside];
     btn.backgroundColor=[UIColor blueColor];

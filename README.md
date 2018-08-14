@@ -3,7 +3,7 @@
 ### 将文件拖到项目里，想要这种效果的导航控制器继承LSNavigationController
 ### 每个VC都有一个UINavigationBar,导航控制器的navigationBar被隐藏
 
-### 使用此框架适用于frame从64开始算的项目
+### 使用此框架适用于frame从0开始算的项目
 ### 设置UINavigationBar,UIBarButtonItem 和系统使用方法一样
 ![image](https://github.com/lsmakethebest/LSNavigationController/blob/master/images/show.gif)
 
